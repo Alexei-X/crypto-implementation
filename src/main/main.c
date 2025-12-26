@@ -1,5 +1,5 @@
-#include "historical/caesar_cipher.h"
-#include "structures/bytestring.h"
+#include "../historical/caesar_cipher.h"
+#include "../structures/bytestring.h"
 
 int main() {
     bytestring* message = create_bytestring();
