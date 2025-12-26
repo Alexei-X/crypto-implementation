@@ -52,6 +52,9 @@ $(BUILD_DIR)/tests/$(TEST_TARGET): $(TEST_OBJ_FILES) $(SRC_OBJ_FILES)
 	$(CC) $^ -o $@ $(TEST_FLAGS)
 	$(BUILD_DIR)/tests/$(TEST_TARGET)
 
+run: all
+	./build/$(TARGET)
+
 # Nettoyage des fichiers générés
 clean:
 	rm -rf $(BUILD_DIR)
