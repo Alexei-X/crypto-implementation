@@ -22,5 +22,29 @@ void test_byte_add() {
         add_byte(test_string, i);
     }
     CU_ASSERT(test_string->capacity == 2*DEFAULT_CAPACITY);
+    CU_ASSERT(test_string->size == 21);
+    for (uint8_t i = 0; i < 17; i++) {
+        CU_ASSERT(byte_at(test_string, i+4) == i);
+    }
 }
 
+void test_byte_at() {
+    bytestring* test_string = create_bytestring();
+    for (uint8_t i = 0; i < 100; i++) {
+        add_byte(test_string, i);
+    }
+    for (uint8_t i = 0; i < 100; i++) {
+        CU_ASSERT(byte_at(test_string, i) == i);
+    }
+}
+
+void test_remove_byte() {
+    bytestring* test_string = create_bytestring();
+    for (uint8_t i = 0; i < 100; i++) {
+        add_byte(test_string, i);
+    }
+    CU_ASSERT(test_string->size == 100);
+    remove_byte(test_string, 63);
+    CU_ASSERT(test_string->size == 99);
+    CU_ASSERT(byte_at(test_string, 63) == 64);
+}

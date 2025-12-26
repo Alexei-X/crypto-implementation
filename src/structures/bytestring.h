@@ -16,7 +16,7 @@ bytestring* create_bytestring();
 bytestring* create_bytestring_capacity(uint32_t capacity);
 void add_byte(bytestring* string, uint8_t byte);
 void remove_byte(bytestring* string, size_t index);
-int delete_bytestring(bytestring* string);
+void delete_bytestring(bytestring* string);
 uint8_t byte_at(bytestring* string, size_t index);
 void set_byte(bytestring* string, size_t index, uint8_t value);
 void print_bstring(bytestring* string);
