@@ -26,6 +26,7 @@ void test_byte_add() {
     for (uint8_t i = 0; i < 17; i++) {
         CU_ASSERT(byte_at(test_string, i+4) == i);
     }
+    delete_bytestring(test_string);
 }
 
 void test_byte_at() {
@@ -36,6 +37,7 @@ void test_byte_at() {
     for (uint8_t i = 0; i < 100; i++) {
         CU_ASSERT(byte_at(test_string, i) == i);
     }
+    delete_bytestring(test_string);
 }
 
 void test_remove_byte() {
@@ -47,6 +49,7 @@ void test_remove_byte() {
     remove_byte(test_string, 63);
     CU_ASSERT(test_string->size == 99);
     CU_ASSERT(byte_at(test_string, 63) == 64);
+    delete_bytestring(test_string);
 }
 
 void test_set_byte() {
@@ -58,5 +61,6 @@ void test_set_byte() {
         set_byte(test_string, i, i*2);
         CU_ASSERT(byte_at(test_string, i) == 2*i);
     }
+    delete_bytestring(test_string);
 }
 

@@ -53,7 +53,8 @@ void set_byte(bytestring* string, size_t index, uint8_t value) {
 }
 
 void print_bstring(bytestring *string) {
-    for (size_t i = 0; i < string->size; i++) printf("%d", byte_at(string, i));
-    printf("\n");
+    printf("-----------------------\n");
+    for (size_t i = 0; i < string->size; i++) printf("%d,", byte_at(string, i));
+    printf("\n-----------------------\n");
 }
 
