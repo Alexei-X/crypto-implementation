@@ -48,3 +48,15 @@ void test_remove_byte() {
     CU_ASSERT(test_string->size == 99);
     CU_ASSERT(byte_at(test_string, 63) == 64);
 }
+
+void test_set_byte() {
+    bytestring* test_string = create_bytestring();
+    for (uint8_t i = 0; i < 100; i++) {
+        add_byte(test_string, i);
+    }
+    for (uint8_t i = 0; i < 100; i = i+2) {
+        set_byte(test_string, i, i*2);
+        CU_ASSERT(byte_at(test_string, i) == 2*i);
+    }
+}
+
